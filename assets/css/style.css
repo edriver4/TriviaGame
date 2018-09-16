@@ -1,4 +1,8 @@
 body {
     background-image: url("../images/Gandalf.jpg");
 }
-
+#timer {
+    font-family: monospace;
+    font-size: 60px;
+    text-align: center;
+}
