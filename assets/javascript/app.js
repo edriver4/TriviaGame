@@ -11,7 +11,7 @@
 
 
 // Setting the startTime counter to 90
-var startTime = 120;
+var startTime = 90;
 // Variable that will hold our interval ID when we execute
 // the "run" function
 var intervalId;
@@ -19,6 +19,7 @@ var intervalId;
                                 // function hide () {
                                     // document.getElementById("quiz").style.display = "none";
                                 // }
+// .hide() function hides all of the content within the "quiz" div.  .hide() is calling the hide function that is predefined in JQuery.
 $("#quiz").hide();
 // When the start button gets clicked, run the start function.
 $("#start").on("click", run);
@@ -29,6 +30,7 @@ console.log($("#start").on("click",run));
 //  The run function sets an interval
 //  that runs the decrement function once a second.
 //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+//  The .show() function shows the content for the "Quiz" Div.
 function run() {
     console.log(run);
     clearInterval(intervalId);
@@ -40,7 +42,7 @@ function decrement() {
     // The startTime decreses by one.
     startTime--;
     // Show the time aka the "start Time" in the #timer tag
-    $("#timer").html("<h2>" + startTime + " secounds left" + "<h2>");
+    $("#timer").html("<h2>" + startTime + " seconds left" + "<h2>");
     // When the startTime hits 0 ...
     if (startTime === 0) {
         // ... run the stop function.
