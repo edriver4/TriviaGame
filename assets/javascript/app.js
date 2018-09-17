@@ -15,10 +15,11 @@ var startTime = 120;
 // Variable that will hold our interval ID when we execute
 // the "run" function
 var intervalId;
-hide();
-function hide () {
-    document.getElementById("quiz").style.display = "none";
-}
+                                // hide();
+                                // function hide () {
+                                    // document.getElementById("quiz").style.display = "none";
+                                // }
+$("#quiz").hide();
 // When the start button gets clicked, run the start function.
 $("#start").on("click", run);
 console.log(run);
@@ -32,6 +33,7 @@ function run() {
     console.log(run);
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
+    $("#quiz").show();
 }
 // The decremtn function.
 function decrement() {
