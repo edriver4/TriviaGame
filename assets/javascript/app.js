@@ -7,3 +7,49 @@
     //If player submits their answers before the time is up the player can click submit button
         //Displays the answers that are correct and incorrect
 //
+
+var startTime = 120;
+
+var intervalId;
+
+$("#start").on("click", run);
+
+function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+}
+
+function decrement() {
+    startTime--;
+    $("#timer").html("<h2>" + startTime + " secounds left" + "<h2>");
+    if (number === 0) {
+        stop();
+        alert("Your time is up!");
+    }
+
+}
+
+function stop() {
+    clearInterval(intervalId);
+}
+
+run();
+// var timer = document.getElementById('timer')
+// var timerId = setInterval(timer, 1000);
+
+// function start () {
+//     $("#startButton").on("click");
+//     function timer () {
+//         if (startTime == 0) {
+//             clearTimeout(timerId);
+//             timesUp();
+//         } else {
+//             timer.innerHTML = startTime + "seconds remaining";
+//             startTime--;
+//         }
+//     }
+// };
+
+// function timesUp() {
+//     alert("Times up!");
+// }
