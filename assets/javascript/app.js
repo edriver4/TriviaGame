@@ -9,6 +9,49 @@
 //
 
 
+var questions = {
+    q1: {
+        name: "question 1",
+        choices: [$("#q1Incorrect1"), $("#q1Incorrect2"), $("#q1Incorrect3"), $("#q1Correct")],
+        answer: $("#q1Correct"),
+    },
+    q2: {
+        name: "question 2",
+        choices: [$("#q2Incorrect1"), $("#q2Incorrect2"), $("#q2Incorrect3"), $("#q2Correct")],
+        answer: $("#q2Correct"),
+    },
+    q3: {
+        name: "question 3",
+        choices: [$("#q3Incorrect1"), $("#q3Incorrect2"), $("#q3Incorrect3"), $("#q3Correct")],
+        answer: $("#q3Correct"),
+    },
+    q4: {
+        name: "question 4",
+        choices: [$("#q4Incorrect1"), $("#q4Incorrect2"), $("#q4Incorrect3"), $("#q4Correct")],
+        answer: $("#q4Correct"),
+    },
+    q5: {
+        name: "question 5",
+        choices: [$("#q5Incorrect1"), $("#q5Incorrect2"), $("#q5Incorrect3"), $("#q5Correct")],
+        answer: $("#q5Correct"),
+    },
+    q6: {
+        name: "question 6",
+        choices: [$("#q6Incorrect1"), $("#q6Incorrect2"), $("#q6Incorrect3"), $("#q6Correct")],
+        answer: $("#q6Correct"),
+    },
+    q7: {
+        name: "question 7",
+        choices: [$("#q7Incorrect1"), $("#q7Incorrect2"), $("#q7Incorrect3"), $("#q7Correct")],
+        answer: $("#q7Correct"),
+    },
+    q8: {
+        name: "question 8",
+        choices: [$("#q8Incorrect1"), $("#q8Incorrect2"), $("#q8Incorrect3"), $("#q8Correct")],
+        answer: $("#q8Correct"),
+    }
+}   
+
 
 // Setting the startTime counter to 90
 var startTime = 90;
