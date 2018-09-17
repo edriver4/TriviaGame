@@ -13,7 +13,7 @@ var startTime = 120;
 var intervalId;
 
 $("#start").on("click", run);
-
+console.log(run);
 function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
@@ -22,7 +22,7 @@ function run() {
 function decrement() {
     startTime--;
     $("#timer").html("<h2>" + startTime + " secounds left" + "<h2>");
-    if (number === 0) {
+    if (startTime === 0) {
         stop();
         alert("Your time is up!");
     }
@@ -33,7 +33,7 @@ function stop() {
     clearInterval(intervalId);
 }
 
-run();
+
 // var timer = document.getElementById('timer')
 // var timerId = setInterval(timer, 1000);
 
