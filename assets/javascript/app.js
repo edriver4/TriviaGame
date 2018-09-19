@@ -54,7 +54,7 @@ var questions = [
 
 
 // Setting the startTime counter to 90
-var startTime = 10;
+var startTime = 20;
 // Variable that will hold our interval ID when we execute
 // the "run" function
 var intervalId;
@@ -134,7 +134,7 @@ function done () {
     
 
     $.each($("input[name='question-3']:checked"), function() {
-        if($(this).val() === question[3].correctAnswer){
+        if($(this).val() === questions[3].correctAnswer){
             correct++
         } else {
             incorrect++
@@ -143,7 +143,7 @@ function done () {
     })
 
     $.each($("input[name='question-4']:checked"), function() {
-        if($(this).val() === question[4].correctAnswer){
+        if($(this).val() === questions[4].correctAnswer){
             correct++
         } else {
             incorrect++
@@ -152,7 +152,7 @@ function done () {
     })
 
     $.each($("input[name='question-5']:checked"), function() {
-        if($(this).val() === question[5].correctAnswer){
+        if($(this).val() === questions[5].correctAnswer){
             correct++
         } else {
             incorrect++
@@ -161,7 +161,7 @@ function done () {
     });
 
     $.each($("input[name='question-6']:checked"), function() {
-        if($(this).val() === question[6].correctAnswer){
+        if($(this).val() === questions[6].correctAnswer){
             correct++
         } else {
             incorrect++
@@ -170,7 +170,7 @@ function done () {
     })
 
     $.each($("input[name='question-7']:checked"), function() {
-        if($(this).val() === question[7].correctAnswer){
+        if($(this).val() === questions[7].correctAnswer){
             correct++
         } else {
             incorrect++
