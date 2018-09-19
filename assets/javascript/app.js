@@ -88,7 +88,7 @@ function start () {
         quizBox.append("<h4>" + questions[i].question + "</h4>");
         console.log(quizBox.append());
         for (var j = 0; j < questions[i].answers.length; j++){
-            quizBox.append("<input type='radio' name='question-" + i + " ' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+            quizBox.append("<input type='radio' name='question-" + i + "' value= '"+ questions[i].answers[j] + "''>" + questions[i].answers[j]);
 
         }
     }
@@ -100,17 +100,19 @@ function start () {
 // this function tracks the the amount of incorrect and correct answers the user chooses.
 function done () {
     console.log("done() is running");
-    $.each($("input[name='question-0']:checked"), function() {
+    $.each($('input[name="question-0"]:checked'), function() {
         if($(this).val() === questions[0].correctAnswer){
+            console.log($(this).val());
             correct++
-            $("#answerDisplay").html(correct);
+            // $("#answerDisplay").html(correct);
         } else {
             incorrect++
         }
         console.log(this);
-        console.log(questions[0].correctAnswer);  
-    })
-
+        console.log(questions[0].correctAnswer); 
+        console.log("this is the ==>" + ($.each($("input[name='question-0']:checked"),function(){}))); 
+    });
+            
     $.each($("input[name='question-1']:checked"), function() {
         if($(this).val() === questions[1].correctAnswer){
             console.log($(this).val());
@@ -171,7 +173,7 @@ function done () {
 // This is my submit button.
 $('#submit').click(function() {
     done();
-    $("#answerDisplay").html(correct)
+    // $("#answerDisplay").html("Total of Correct " + correct);
     // console.log(done());
     console.log("I CLICKED LOOK AT ME");
 })
