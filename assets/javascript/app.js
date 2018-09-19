@@ -99,35 +99,39 @@ function start () {
 
 // this function tracks the the amount of incorrect and correct answers the user chooses.
 function done () {
-    console.log("done() is running");
+    // console.log("done() is running");
     $.each($('input[name="question-0"]:checked'), function() {
         if($(this).val() === questions[0].correctAnswer){
-            console.log($(this).val());
+            // console.log($(this).val());
             correct++
             // $("#answerDisplay").html(correct);
         } else {
             incorrect++
         }
-        console.log(this);
+        // console.log(this);
         console.log(questions[0].correctAnswer); 
-        console.log("this is the ==>" + ($.each($("input[name='question-0']:checked"),function(){}))); 
-    });
+        // console.log("this is the ==>" + ($.each($("input[name='question-0']:checked"),function(){}))); 
+    })
             
     $.each($("input[name='question-1']:checked"), function() {
         if($(this).val() === questions[1].correctAnswer){
-            console.log($(this).val());
             correct++
         } else {
             incorrect++ 
     }
+    console.log(questions[1].correctAnswer);
     })
+
+
     $.each($("input[name='question-2']:checked"), function() {
         if($(this).val() === questions[2].correctAnswer){
             correct++
         } else {
             incorrect++
         }
+        console.log(questions[2].correctAnswer);
     })
+    
 
     $.each($("input[name='question-3']:checked"), function() {
         if($(this).val() === question[3].correctAnswer){
@@ -135,6 +139,7 @@ function done () {
         } else {
             incorrect++
         }
+        console.log(questions[3].correctAnswer);
     })
 
     $.each($("input[name='question-4']:checked"), function() {
@@ -143,6 +148,7 @@ function done () {
         } else {
             incorrect++
         }
+        console.log(questions[4].correctAnswer);
     })
 
     $.each($("input[name='question-5']:checked"), function() {
@@ -151,7 +157,8 @@ function done () {
         } else {
             incorrect++
         }
-    })
+        console.log(questions[5].correctAnswer);
+    });
 
     $.each($("input[name='question-6']:checked"), function() {
         if($(this).val() === question[6].correctAnswer){
@@ -159,6 +166,7 @@ function done () {
         } else {
             incorrect++
         }
+        console.log(questions[6].correctAnswer);
     })
 
     $.each($("input[name='question-7']:checked"), function() {
@@ -167,16 +175,21 @@ function done () {
         } else {
             incorrect++
         }
+        console.log(questions[7].correctAnswer);
     })
-    $("#answerDisplay").html(correct); 
+    // $("#answerDisplay").html("<h5>" + "Total Correct: " + correct + "</h5>"); 
+    // $("#answerDisplay").html("<h5>" + "Total Incorrect: " + incorrect + "</h5>");
 };  
 // This is my submit button.
 $('#submit').click(function() {
+    stop();
     done();
+    $("#answerDisplay").append("Total Correct: " + correct); 
+    $("#answerDisplay").append("Total Incorrect: " + incorrect);
     // $("#answerDisplay").html("Total of Correct " + correct);
     // console.log(done());
-    console.log("I CLICKED LOOK AT ME");
-})
+    // console.log("I CLICKED LOOK AT ME");
+});
 
 // The decremtn function.
 function decrement() {
@@ -191,14 +204,16 @@ function decrement() {
         // Alert the user that the time is up.
         alert("Your time is up!");
         done();
+        $("#answerDisplay").append("Total Correct: " + correct); 
+        $("#answerDisplay").append("Total Incorrect: " + incorrect);
     }
 
-}
+};
 // The stop function
 function stop() {
     // Clears the intervalId
-    // We jsut pass the name of the interval
+    // We just pass the name of the interval
     // to the clearInterval function.
     clearInterval(intervalId);
-}
+};
 
