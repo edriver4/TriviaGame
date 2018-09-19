@@ -6,7 +6,7 @@
 //Displays the answers that are correct and incorrect
 //If player submits their answers before the time is up the player can click submit button
 //Displays the answers that are correct and incorrect
-//
+// Variable for correct and incorrect answers.  Also the this is my questions object.
 var correct = 0
 var incorrect = 0
 var questions = [
@@ -96,6 +96,8 @@ function start () {
 // $("#submit").click(function() {
 //     console.log("done!");
 // })
+
+// this function tracks the the amount of incorrect and correct answers the user chooses.
 function done () {
     console.log("done() is running");
     $.each($("input[name='question-0']:checked"), function() {
@@ -166,7 +168,7 @@ function done () {
     })
     $("#answerDisplay").html(correct); 
 };  
-
+// This is my submit button.
 $('#submit').click(function() {
     done();
     $("#answerDisplay").html(correct)
