@@ -54,7 +54,7 @@ var questions = [
 
 
 // Setting the startTime counter to 90
-var startTime = 30;
+var startTime = 10;
 // Variable that will hold our interval ID when we execute
 // the "run" function
 var intervalId;
@@ -89,28 +89,35 @@ function start () {
         console.log(quizBox.append());
         for (var j = 0; j < questions[i].answers.length; j++){
             quizBox.append("<input type='radio' name='question-" + i + " ' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+
         }
     }
 }
-
+// $("#submit").click(function() {
+//     console.log("done!");
+// })
 function done () {
-    $.each($("input[name='question-0]:checked"), function() {
+    console.log("done() is running");
+    $.each($("input[name='question-0']:checked"), function() {
         if($(this).val() === questions[0].correctAnswer){
             correct++
+            $("#answerDisplay").html(correct);
         } else {
             incorrect++
         }
-        console.log(this);  
+        console.log(this);
+        console.log(questions[0].correctAnswer);  
     })
 
-    $.each($("input[name='question-1]:checked"), function() {
+    $.each($("input[name='question-1']:checked"), function() {
         if($(this).val() === questions[1].correctAnswer){
+            console.log($(this).val());
             correct++
         } else {
             incorrect++ 
     }
     })
-    $.each($("input[name='question-2]:checked"), function() {
+    $.each($("input[name='question-2']:checked"), function() {
         if($(this).val() === questions[2].correctAnswer){
             correct++
         } else {
@@ -118,7 +125,7 @@ function done () {
         }
     })
 
-    $.each($("input[name='question-3]:checked"), function() {
+    $.each($("input[name='question-3']:checked"), function() {
         if($(this).val() === question[3].correctAnswer){
             correct++
         } else {
@@ -126,7 +133,7 @@ function done () {
         }
     })
 
-    $.each($("input[name='question-4]:checked"), function() {
+    $.each($("input[name='question-4']:checked"), function() {
         if($(this).val() === question[4].correctAnswer){
             correct++
         } else {
@@ -142,7 +149,7 @@ function done () {
         }
     })
 
-    $.each($("input[name='question-6]:checked"), function() {
+    $.each($("input[name='question-6']:checked"), function() {
         if($(this).val() === question[6].correctAnswer){
             correct++
         } else {
@@ -150,14 +157,23 @@ function done () {
         }
     })
 
-    $.each($("input[name='question-7]:checked"), function() {
+    $.each($("input[name='question-7']:checked"), function() {
         if($(this).val() === question[7].correctAnswer){
             correct++
         } else {
             incorrect++
         }
     })
-}   
+    $("#answerDisplay").html(correct); 
+};  
+
+$('#submit').click(function() {
+    done();
+    $("#answerDisplay").html(correct)
+    // console.log(done());
+    console.log("I CLICKED LOOK AT ME");
+})
+
 // The decremtn function.
 function decrement() {
     // The startTime decreses by one.
