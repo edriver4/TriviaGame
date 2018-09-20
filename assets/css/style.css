@@ -1,8 +1,13 @@
 body {
-    background-image: url("../images/Gandalf.jpg");
+    background: url("../images/Gandalf.jpg") no-repeat;
+    background-size: cover;
 }
 #timer {
     font-family: monospace;
     font-size: 60px;
     text-align: center;
+}
+
+.jumbotron {
+    opacity: .5;
 }
